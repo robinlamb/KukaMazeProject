@@ -187,7 +187,8 @@ def plan_to_goal(req):
                blocked_path = True
 
            if (out_of_range == False) and (blocked_path == False):
-               neighbor = Cell(neighbor_x_grid, neighbor_y_grid, neighbor_x_map, neighbor_y_map, 0.00, lowest_f_cell) 
+               neighbor = Cell(neighbor_x_grid, neighbor_y_grid, neighbor_x_map, neighbor_y_map, 0.00) 
+               neighbor.previous_cell = lowest_f_cell
                neighbor_cells.append(neighbor)
 
        # Loop through the valid neighboring cells in the grid to find the one with the lowest g value that will be used in the
